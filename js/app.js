@@ -10,6 +10,9 @@ const defaultWeather = () => {
 defaultWeather();
 
 const defaultDisplay = (city) => {
+    const url = (`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`)
+    const wIcon = document.getElementById('w-icon');
+    wIcon.setAttribute('src', url);
     const weatherResult = document.getElementById('weather-result');
     weatherResult.innerHTML = `
     <h1 class="d-inline-block">${city.name}</h1>
